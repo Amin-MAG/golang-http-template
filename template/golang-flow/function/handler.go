@@ -10,7 +10,7 @@ func ExecFlow(request FlowInput) (*FlowOutput, error) {
 		return nil, errors.New("name is required")
 	}
 
-	message := Message{Text: fmt.Sprintf("Hello %s!", request.Args.Name)}
+	message := Message{Text: fmt.Sprintf("Hello %s!", *request.Args.Name)}
 
 	return createFlowOutput("hello_world", message)
 }
