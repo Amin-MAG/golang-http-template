@@ -7,5 +7,5 @@ type FlowOutput struct {
 
 type FlowInput struct {
 	Args     Input                 `json:"args"`
-	Children map[string]FlowOutput `json:"children,omitempty"`
+	Children map[string]*FlowOutput `json:"children,omitempty"`
 }
