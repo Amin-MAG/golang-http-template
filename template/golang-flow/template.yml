@@ -1,4 +1,4 @@
-language: golang-floe
+language: golang-flow
 fprocess: ./handler
 welcome_message: |
   You have created a new function which uses Go 1.19 and Alpine
