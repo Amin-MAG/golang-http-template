@@ -1,4 +1,4 @@
-package flow
+package function
 
 type FlowOutput struct {
 	Data     map[string]interface{} `json:"data"`
@@ -6,6 +6,6 @@ type FlowOutput struct {
 }
 
 type FlowInput struct {
-	Args     map[string]interface{} `json:"args"`
-	Children map[string]FlowOutput  `json:"children"`
+	Args     Input                 `json:"args"`
+	Children map[string]FlowOutput `json:"children,omitempty"`
 }

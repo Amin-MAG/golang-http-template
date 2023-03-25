@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"handler/flow"
 	"handler/function"
 	"io"
 	"log"
@@ -41,7 +40,7 @@ func main() {
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
-	var input flow.FlowInput
+	var input function.FlowInput
 
 	if r.Body != nil {
 		defer r.Body.Close()

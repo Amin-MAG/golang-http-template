@@ -1,8 +1,16 @@
 package function
 
-import "handler/flow"
+import (
+	"errors"
+	"fmt"
+)
 
-func ExecFlow(request flow.FlowInput) (*flow.FlowOutput, error) {
+func ExecFlow(request FlowInput) (*FlowOutput, error) {
+	if request.Args.Name == nil {
+		return nil, errors.New("name is required")
+	}
 
-	return nil, nil
+	message := Message{Text: fmt.Sprintf("Hello %s!", request.Args.Name)}
+
+	return createFlowOutput("hello_world", message)
 }
